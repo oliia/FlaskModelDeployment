@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan acceptance Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <!--  <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css"> --> <!-- For running locally -->
+	<script src="{{ url_for('static',filename='app.js') }}"></script>
+	<link rel="stylesheet"  href= "{{ url_for('static',filename='app.css') }}"> <!-- For integrating Flask and HTML -->
+</head>
+<body>
+<div class="img"></div>
+<form class="form">
+	<h2>Applicant Income</h2>
+    <input class="area"  type="email" id="uiSqft" class="floatLabel" name="ApplicantIncome" value="1000">
+	<h2>Co-applicant Income</h2>
+    <input class="area"  type="email" id="uiSqft2" class="floatLabel" name="CoapplicantIncome" value="0">
+	<h2>Loan Amount</h2>
+    <input class="area"  type="email" id="uiSqft3" class="floatLabel" name="LoanAmount" value="1000">
+	<h2>Loan Amount Term(days)</h2>
+    <input class="area"  type="email" id="uiSqft4" class="floatLabel" name="Loan_Amount_Term" value="360">
+
+	<h2>Marital status</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-bhk-1" name="uiBHK" value="1" checked/>
+		<label for="radio-bhk-1">Not married</label>
+		<input type="radio" id="radio-bhk-2" name="uiBHK" value="2" />
+		<label for="radio-bhk-2">  Married  </label>
+	</div>
+	</form>
+<form class="form">
+		<h2>Property Area</h2>
+	<div>
+  <select class="location" name="" id="uiLocations">
+    <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+		<option value="0" >Rural</option>
+        <option value="1" >Semi-urban</option>
+	  	<option value="2" >Urban</option>
+  </select>
+</div>
+	<button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Loan Acceptance</button>
+	<div id="uiEstimatedPrice" class="result">	<h2></h2> </div>
+</body>
+</html>
